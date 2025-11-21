@@ -1,0 +1,74 @@
+/* تنسيقات خاصة لجدول الخدمات */
+.pricing-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    border-collapse: separate; /* مهم للزوايا الدائرية */
+    border-spacing: 0 15px; /* مسافة بين الصفوف */
+    text-align: right;
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 18px 25px;
+    font-size: 16px;
+}
+
+.pricing-table thead th {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    /* لتطبيق الزوايا الدائرية على الهيدر فقط */
+}
+
+.pricing-table thead tr {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-table thead th:first-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.pricing-table thead th:last-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+
+.pricing-table tbody tr {
+    background-color: #ffffff; /* خلفية بيضاء لصفوف الخدمات */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-table tbody tr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* تنسيق عمود السعر */
+.pricing-table .price-cell {
+    text-align: center;
+    font-weight: 900;
+    color: var(--primary-color);
+    font-size: 20px;
+    width: 150px;
+}
+
+/* تنسيق زر الطلب داخل الجدول */
+.pricing-table .action-cell a {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 15px;
+}
+
+.pricing-table .action-cell a:hover {
+    background-color: #5d4037; /* لون أغمق عند المرور */
+}
