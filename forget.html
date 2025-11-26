@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نسيت كلمة المرور - غِمْد</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #3e2723;   
+            --secondary-color: #fbeedc; 
+            --text-dark: #333;
+            --text-light: #fff;
+            --shadow-color: rgba(62, 39, 35, 0.2);
+        }
+
+        /* 1. التنسيق الأساسي */
+        body {
+            background-color: var(--secondary-color);
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        /* 2. الهيدر (Header) */
+        .header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-container a {
+            font-size: 32px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 800;
+            letter-spacing: 2px;
+            padding: 5px 10px;
+            border-bottom: 3px solid var(--secondary-color);
+            transition: color 0.3s;
+        }
+
+        /* 3. صندوق النموذج (Form Box) */
+        .form-box {
+            background: #fff;
+            width: 90%;
+            max-width: 400px; 
+            margin: auto; 
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .form-box h2 {
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-size: 30px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* رسالة توضيحية أعلى النموذج */
+        .form-box p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .form-box h2 i {
+            margin-left: 10px;
+        }
+
+        /* 4. حقول الإدخال (Inputs) - نفس التنسيق السابق */
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+            text-align: right;
+        }
+
+        .input-group label {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 15px; 
+            transform: translateY(-50%);
+            color: #777;
+            font-size: 16px;
+            z-index: 10;
+            pointer-events: none;
+            width: 100px; 
+            text-align: right; 
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            left: 15px; 
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 18px;
+            z-index: 10;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+            font-size: 16px;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            text-align: right;
+            box-sizing: border-box;
+            padding-right: 120px; 
+            padding-left: 50px;   
+        }
+        
+        input:focus {
+            border-color: var(--primary-color);
+            background: var(--secondary-color);
+            box-shadow: 0 0 5px rgba(62, 39, 35, 0.5);
+            outline: none;
+        }
+
+        /* 5. زر الإرسال (Button) */
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s, transform 0.2s;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: #5d4037; 
+            transform: translateY(-2px);
+        }
+
+        /* 6. الروابط الإضافية */
+        .extra-links {
+            margin-top: 25px;
+            font-size: 15px;
+        }
+
+        .extra-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0 5px;
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">غِــمْــد</a>
+        </div>
+    </header>
+
+    <div class="form-box">
+        <h2><i class="fas fa-question-circle"></i> استعادة كلمة المرور</h2>
+        
+        <p>
+            الرجاء إدخال **البريد الإلكتروني** المرتبط بحسابك. سنقوم بإرسال رابط لإعادة تعيين كلمة المرور فوراً.
+        </p>
+
+        <div class="input-group">
+            <label for="email">البريد الإلكتروني</label>
+            <i class="fas fa-envelope"></i> 
+            <input type="email" id="email" required>
+        </div>
+
+        <button type="button" onclick="resetPassword()">إرسال الرابط</button>
+
+        <div class="extra-links">
+            <a href="login.html">العودة لتسجيل الدخول</a> |
+            <a href="register.html">إنشاء حساب جديد</a>
+        </div>
+    </div>
+
+    <script>
+        function resetPassword() {
+            let email = document.getElementById("email").value.trim();
+
+            if (email === "") {
+                alert("الرجاء إدخال البريد الإلكتروني.");
+                return;
+            }
+            
+            // تحقق بسيط من تنسيق البريد الإلكتروني
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("الرجاء إدخال بريد إلكتروني صحيح.");
+                return;
+            }
+
+            // محاكاة عملية الإرسال
+            alert(`تم إرسال رابط إعادة تعيين كلمة المرور إلى ${email}. الرجاء التحقق من بريدك.`);
+        }
+    </script>
+
+</body>
+</html>
